@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/05 20:50:16 by soel-bou          #+#    #+#             */
+/*   Updated: 2023/11/08 01:52:58 by soel-bou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t len)
+{
+	unsigned char	*rtr;
+	size_t			i;
+
+	i = 0;
+	rtr = (unsigned char *) s;
+	while (i < len)
+	{
+		rtr[i] = (unsigned char) c;
+		i++;
+	}
+	return ((void *)rtr);
+}
