@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:52:07 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/05 21:35:50 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:14:40 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	*ft_bzero(void *s, size_t n)
 {
-    return(ft_memset(s,0,n));
+	return (ft_memset(s, 0, n));
 }

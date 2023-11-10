@@ -6,20 +6,20 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:49:39 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/09 18:51:38 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:44:23 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

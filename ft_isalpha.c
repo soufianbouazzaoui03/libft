@@ -6,13 +6,13 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:44:33 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/05 21:45:40 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:15:41 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

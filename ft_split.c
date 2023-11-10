@@ -6,13 +6,13 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:56:21 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/07 22:09:31 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:26:54 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int wordcounter(const char *s, char c)
+static int wordcounter(const char *s, char c)
 {
     int numofwords;
     int i;
@@ -36,7 +36,7 @@ int wordcounter(const char *s, char c)
     }
     return (numofwords);
 }
-char *fill(const char *s, size_t start, size_t end)
+static char *fill(const char *s, size_t start, size_t end)
 {
     char *word;
     int i;
@@ -55,7 +55,7 @@ char *fill(const char *s, size_t start, size_t end)
     return(word);
 }
 
-void    ft_free(char **list,int numofword)
+static void    ft_free(char **list,int numofword)
 {
     int i;
 
@@ -85,7 +85,7 @@ char **ft_split(const char *s, char c)
     if(!list)
     return(NULL);
     list[now]  = NULL;
-    while(i <= strlen(s))
+    while(i <= ft_strlen(s))
     {
         while(s[i] == c)
             i++;
@@ -108,7 +108,7 @@ char **ft_split(const char *s, char c)
     return (list - now);
 }
 
-void ff (void)
+/*void ff (void)
 {
     system("leaks a.out");
 }
@@ -128,4 +128,4 @@ int main()
     }
     free(list);
     return 0;
-}
+}*/

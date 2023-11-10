@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 03:21:22 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/06 04:52:54 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 00:25:19 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,27 @@
     }
     return (NULL);
 }*/
-char    *ft_strnstr(const char *string, const char *str, size_t len)
+char	*ft_strnstr(const char *string, const char *str, size_t len)
 {
-    
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    j = 0;
-    if (!*str)
-     return (char *)string;
-    while(i < len && string[i])
-    {
-        if(string[i+j] == str[j])
-        {
-            while(j < ft_strlen(str) && (i + j) < len && string[i+j] == str[j])
-            {
-                
-                j++;
-            }
-            if (j == ft_strlen(str))
-                return (char *)&string[i];
-            j = 0;
-        }
-        i++;
-    }
-    return NULL;
+	i = 0;
+	j = 0;
+	if (!*str)
+		return ((char *)string);
+	while (i < len && string[i])
+	{
+		if (string[i + j] == str[j])
+		{
+			while (j < ft_strlen(str) && (i + j) < len 
+				&& string[i + j] == str[j])
+				j++;
+			if (j == ft_strlen(str))
+				return ((char *)&string[i]);
+			j = 0;
+		}
+		i++;
+	}
+	return (NULL);
 }

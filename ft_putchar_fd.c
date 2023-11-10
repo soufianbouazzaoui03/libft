@@ -6,13 +6,13 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:36:21 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/09 18:44:24 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:42:35 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-        write(fd, &c, 1);
+	write(fd, &c, 1);
 }
