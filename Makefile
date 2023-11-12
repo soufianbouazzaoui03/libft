@@ -33,7 +33,7 @@ bonus : ${NAME} ${B_OBJ}
 
 
 %.o: %.c
-	gcc -Wextra -Wall -Werror -c $< -o $@
+	cc -Wextra -Wall -Werror -c $< -o $@
 
 clean:
 	rm -f ${OBJ} ${B_OBJ}
