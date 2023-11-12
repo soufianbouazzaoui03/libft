@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:32:09 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/11 00:34:52 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 23:43:41 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		return (ft_strdup(""));

@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:44:54 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/10 23:31:47 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:28:56 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ss;
 	unsigned char	cc;
-	size_t	i;
+	size_t			i;
 
 	ss = (unsigned char *) s;
 	cc = (unsigned char) c;

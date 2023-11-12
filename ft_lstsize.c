@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 00:44:29 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/10 23:21:24 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:28:17 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	len;
+	int		len;
 	t_list	*tmp;
 
 	len = 0;

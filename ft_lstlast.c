@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 01:26:35 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/10 23:11:23 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:28:45 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (lst == NULL)
 		return (NULL);
 	last = lst;
-	while (last->next)
+	while (last && last->next)
 	{
 		last = last->next;
 	}

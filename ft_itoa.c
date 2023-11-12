@@ -6,13 +6,13 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:20:26 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/10 22:51:36 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:35:11 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_size(long n)
+static int	ft_size(long n)
 {
 	int	size;
 
@@ -25,7 +25,7 @@ int	ft_size(long n)
 	return (size);
 }
 
-long	ft_size2(long n)
+static long	ft_size2(long n)
 {
 	long	res;
 
@@ -38,9 +38,9 @@ long	ft_size2(long n)
 	return (res);
 }
 
-char	*fillpos(size_t size, long nbr, long zeros)
+static char	*ft_fillpos(size_t size, long nbr, long zeros)
 {
-	int	i;
+	int		i;
 	char	*res;
 
 	i = 0;
@@ -57,9 +57,9 @@ char	*fillpos(size_t size, long nbr, long zeros)
 	return (res);
 }
 
-char	*fillnega(size_t size, long nbr, long zeros)
+static char	*ft_fillnega(size_t size, long nbr, long zeros)
 {
-	int	i;
+	int		i;
 	char	*res2;
 
 	i = 1;
@@ -92,13 +92,13 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	if (nbr > 0)
 	{
-		res = fillpos(ft_size(nbr), nbr, ft_size2(ft_size(nbr)));
+		res = ft_fillpos(ft_size(nbr), nbr, ft_size2(ft_size(nbr)));
 		if (!res)
 			return (NULL);
 	}
 	else
 	{
-		res = fillnega(ft_size(nbr), nbr, ft_size2(ft_size(nbr)));
+		res = ft_fillnega(ft_size(nbr), nbr, ft_size2(ft_size(nbr)));
 		if (!res)
 			return (NULL);
 	}

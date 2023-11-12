@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 00:53:31 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/11 00:14:11 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:07:41 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			slen;
 	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	slen = ft_strlen(s);
 	res = (char *)malloc((slen + 1) * sizeof(char));
