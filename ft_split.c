@@ -5,22 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 19:56:21 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/11 20:44:55 by soel-bou         ###   ########.fr       */
+/*   Created: 2023/11/12 02:05:46 by soel-bou          #+#    #+#             */
+/*   Updated: 2023/11/12 04:02:25 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-typedef struct data
-{
-	char		**list;
-	const char	*s;
-	char		c;
-	size_t		*i;
-	int			now;
-}t_data;
 
 static int	wordcounter(const char *s, char c)
 {
@@ -47,13 +38,13 @@ static int	wordcounter(const char *s, char c)
 	return (numofwords);
 }
 
-static char	*fill(const char *s, size_t start, size_t end)
+static char	*ft_fill(const char *s, int start, int end)
 {
 	char	*word;
 	int		i;
 
 	i = 0;
-	word = (char *)malloc((end - start + 1) * sizeof(char));
+	word = (char *)ft_calloc((end - start + 1), sizeof(char));
 	if (!word)
 		return (NULL);
 	while (start < end)
@@ -66,102 +57,63 @@ static char	*fill(const char *s, size_t start, size_t end)
 	return (word);
 }
 
-static void	ft_free(char **list, int numofword)
+static void	*ft_free(char **strs, int count)
 {
 	int	i;
 
 	i = 0;
-	while (i < numofword)
+	while (i < count)
 	{
-		free(list[i]);
+		free(strs[i]);
 		i++;
 	}
-	free(list);
+	free(strs);
+	return (NULL);
 }
 
-static char	**split_loop(t_data mydata)
+void static	ft_initia(size_t *i, size_t *j, int *start)
 {
-	size_t	start;
-	size_t	end;
-
-	while (mydata.s[*mydata.i] == mydata.c)
-		(*mydata.i)++;
-	if (mydata.s[*mydata.i] != mydata.c && mydata.s[*mydata.i])
-	{
-		start = *mydata.i;
-		while (mydata.s[*mydata.i] != mydata.c && mydata.s[*mydata.i])
-			(*mydata.i)++;
-		end = *mydata.i;
-		*mydata.list = fill(mydata.s, start, end);
-		if (!(*mydata.list))
-		{
-			ft_free(mydata.list, mydata.now);
-			return (NULL);
-		}
-		mydata.list++;
-	}
-	return (mydata.list);
+	*i = 0;
+	*j = 0;
+	*start = -1;
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**list;
-	int		now;
 	size_t	i;
+	size_t	j;
+	int		start;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	now = wordcounter(s, c);
-	list = (char **)malloc((now + 1) * sizeof(char *));
+	ft_initia(&i, &j, &start);
+	list = (char **)ft_calloc(wordcounter(s, c) + 1, sizeof(char *));
 	if (!list)
 		return (NULL);
-	list[now] = 0;
 	while (i <= ft_strlen(s))
 	{
-		t_data	mydata = {list, s, c, &i, now};
-		list = split_loop(mydata);
-		if (!list)
-			return (0);
+		if (s[i] != c && start < 0)
+			start = i;
+		else if ((s[i] == c || s[i] == '\0') && start >= 0)
+		{
+			list[j] = ft_fill(s, start, i);
+			if (!list[j])
+				return (ft_free(list, j));
+			start = -1;
+			j++;
+		}
 		i++;
 	}
-	return (list - now);
+	return (list);
 }
-/*char **ft_split(const char *s, char c)
+/*int main()
 {
-    char **list;
-    int now;
-    size_t  start;
-    size_t  end;
-    size_t  i;
-    
-    if(s == NULL)
-        return (NULL);
-    i = 0;
-    now = wordcounter(s,c);
-    list = (char **)malloc((now + 1) * sizeof(char*));
-    if(!list)
-    return(NULL);
-    list[now]  = NULL;
-    while(i <= ft_strlen(s))
-    {
-        while(s[i] == c)
-            i++;
-        if(s[i] != c && s[i])
-        {
-            start = i;
-            while(s[i] != c && s[i])
-                i++;
-            end = i;
-            *list = fill(s,start,end);
-            if(!(*list))
-            {
-                ft_free(list,now);
-                return (NULL);
-            }
-            list++;
-        }
-        i++;
-    }
-    return (list - now);
+	int i;
+
+	i = 0;
+	char **res = ft_split("hsdb dshfjbs sdhfb hdsfb", ' ');
+	while(res[i] != NULL)
+	{
+		printf("%s\n %p\n", res[i],&res[i]);
+		i++;
+	}
 }*/
