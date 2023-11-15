@@ -6,12 +6,11 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 02:05:46 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/12 04:02:25 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:41:58 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	wordcounter(const char *s, char c)
 {

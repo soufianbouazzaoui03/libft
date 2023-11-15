@@ -6,12 +6,11 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:16:23 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/12 01:14:28 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:38:51 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strdup(const char *s)
 {
