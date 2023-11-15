@@ -6,12 +6,11 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:41:46 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/11 23:42:35 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:39:28 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -26,16 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*void *tup(unsigned int i, char *str)
-{
-  i = 32;
-  *str -= i;
-        return (i);
-}
-int main()
-{
-    char str[4] = "aaaa";
-    ft_striteri(str, &tup);
-    printf("%s", str);
-}*/

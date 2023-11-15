@@ -6,12 +6,11 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:46:57 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/12 01:54:28 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:39:37 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*ft_fill(const char *s1, const char *s2, size_t s1len, size_t s2len)
 {

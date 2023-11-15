@@ -6,7 +6,7 @@
 /*   By: soel-bou <soel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 22:10:14 by soel-bou          #+#    #+#             */
-/*   Updated: 2023/11/11 00:05:38 by soel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:52:05 by soel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dlen + slen);
 }
+
+/*int main()
+{
+    char dst[10] = "ay";
+    const char *src = "Hello, World!";
+    size_t dstsize = sizeof(dst);
+
+    printf("Original destination string: \"%s\"\n", dst);
+    printf("Source string: \"%s\"\n", src);
+
+    size_t len = ft_strlcat(dst, src, dstsize);
+    printf("New destination string: \"%s\"\n", dst);
+    printf("Length of combined strings: %zu\n", len);
+
+    return 0;
+}*/
